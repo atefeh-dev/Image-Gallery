@@ -1,6 +1,6 @@
 /** @format */
-
+import Header from "./Header";
 const Home = () => {
-  return <h1>Hello there!</h1>;
+  return <Header />;
 };
 export default Home;

@@ -1,0 +1,47 @@
+/** @format */
+
+:root {
+  // colors
+  --white: #fff;
+  --black: #000;
+  --gray-light: #6d6d6d;
+  --gray-dark: #494949;
+  --blue-tint-light: hsl(216, 100%, 50%);
+  --blue-tint-dark: hsl(216, 100%, 35%);
+}
+:root {
+  --padding-offset: 2rem;
+
+  --transition-duration-300: 300ms;
+  --transition-duration-100: 100ms;
+  --transition-delay: 80ms;
+
+  --body-background: rgb(225, 225, 225);
+
+  // colors
+  --white: #fff;
+  --black: #000;
+  --gray-light: #6d6d6d;
+  --gray-dark: #494949;
+  --blue-tint-light: hsl(216, 100%, 50%);
+  --blue-tint-dark: hsl(216, 100%, 35%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+input,
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+body {
+  width: 100%;
+  background: var(--body-background);
+  font-family: Ubuntu, "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
