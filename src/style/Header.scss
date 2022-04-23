@@ -1,5 +1,6 @@
 /** @format */
 @import "App";
+
 header {
   position: relative;
   width: 100%;
@@ -221,5 +222,37 @@ header {
   }
   100% {
     filter: hue-rotate(0deg);
+  }
+}
+@media only screen and (min-width: 550px) {
+  header {
+    form {
+      .form-group {
+        &.g-2 {
+          display: none;
+        }
+      }
+
+      .floating--container {
+        display: none;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 550px) {
+  header {
+    position: sticky;
+    background: var(--body-background);
+    z-index: 30;
+    top: 0;
+    padding: 0 1rem;
+
+    form {
+      .form-group {
+        &.g-1 {
+          display: none;
+        }
+      }
+    }
   }
 }
