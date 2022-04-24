@@ -6,14 +6,12 @@ const Header = () => {
   const [isFloatingInputActive, setFloatingInputActive] = useState(false);
 
   const inputEl = useRef();
-  const floatingInputEl = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
   const handleHomePage = () => {
     inputEl.current.value = "";
-    floatingInputEl.current.value = "";
   };
 
   return (
