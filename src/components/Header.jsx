@@ -5,6 +5,7 @@ import React, { useRef, useState, useEffect } from "react";
 const Header = () => {
   const [isFloatingInputActive, setFloatingInputActive] = useState(false);
   const [name, setName] = useState();
+  const [floatv, setFloatv] = useState();
 
   const inputEl = useRef();
   const floatingInputEl = useRef();
@@ -79,15 +80,13 @@ const Header = () => {
             isFloatingInputActive ? "" : "hide"
           }`}>
           <div className="input--container">
-            <input type="text" placeholder="Type here" ref={floatingInputEl} />
-            <button
-              className="btn search"
-              disabled={
-                floatingInputEl.current !== undefined &&
-                floatingInputEl.current.value.length === 0
-                  ? true
-                  : false
-              }>
+            <input
+              type="text"
+              placeholder="Type here"
+              ref={floatingInputEl}
+              onChange={() => setFloatv(floatingInputEl.current.value)}
+            />
+            <button className="btn search" disabled={!floatv ? true : false}>
               search
             </button>
           </div>
