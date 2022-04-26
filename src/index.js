@@ -7,11 +7,20 @@ import App from "./components/App";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import reducers from "./store/reducers";
-const store = createStore(reducers, compose(applyMiddleware(thunk)));
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.querySelector("#root")
+const store = createStore(reducers, compose(applyMiddleware(thunk)));
+const client = new ApolloClient({
+  link: "https://rickandmortyapi.com/graphql",
+  cache: new InMemoryCache(),
+});
+
+const Main = () => (
+  <ApolloProvider client={client}>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </ApolloProvider>
 );
+
+ReactDOM.render(<Main />, document.querySelector("#root"));
