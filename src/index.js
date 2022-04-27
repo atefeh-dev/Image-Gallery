@@ -11,7 +11,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 const client = new ApolloClient({
-  link: "https://rickandmortyapi.com/graphql",
+  uri: "https://rickandmortyapi.com/graphql",
   cache: new InMemoryCache(),
 });
 
