@@ -1,23 +1,11 @@
 /** @format */
 
 import React from "react";
-import { useQuery, gql } from "@apollo/client";
+import { useCharacter } from "../hooks/useCharacters";
 import "../style/ImageList.scss";
 
-const GET_CHARACTERS = gql`
-  query {
-    characters {
-      results {
-        id
-        name
-        image
-      }
-    }
-  }
-`;
 const ImageList = () => {
-  const { error, data, loading } = useQuery(GET_CHARACTERS);
-  console.log({ error, data, loading });
+  const { error, loading, data } = useCharacter();
   if (loading) return <div>spinner...</div>;
   if (error) return <div>Something went wrong</div>;
   return (
