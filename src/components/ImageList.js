@@ -1,8 +1,8 @@
 /** @format */
 
-import { ApolloClient } from "@apollo/client";
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
+import "../style/ImageList.scss";
 
 const GET_CHARACTERS = gql`
   query {
@@ -21,7 +21,7 @@ const ImageList = () => {
   if (loading) return <div>spinner...</div>;
   if (error) return <div>Something went wrong</div>;
   return (
-    <div>
+    <div className="imageList">
       {data.characters.results.map((character) => {
         return (
           <div>
