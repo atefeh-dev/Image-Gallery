@@ -1,11 +1,11 @@
 /** @format */
 
 import React from "react";
-import { useCharacter } from "../hooks/useCharacters";
+import { useCharacters } from "../hooks/useCharacters";
 import "../style/ImageList.scss";
 
 const ImageList = () => {
-  const { error, loading, data } = useCharacter();
+  const { error, loading, data } = useCharacters();
   if (loading) return <div>spinner...</div>;
   if (error) return <div>Something went wrong</div>;
   return (
