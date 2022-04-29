@@ -1,11 +1,14 @@
 /** @format */
 
 import React from "react";
+import { useParams } from "react-router";
 import { useCharacter } from "../hooks/useCharacter";
 import "../style/image.scss";
 const Image = () => {
-  const { error, loading, data } = useCharacter(2);
-  console.log(error, loading, data);
+  console.log(useParams());
+  const { id } = useParams();
+  const { error, loading, data } = useCharacter(id);
+
   if (error) return <div>something is wrong</div>;
   if (loading) return <div>spinner...</div>;
 
@@ -16,7 +19,7 @@ const Image = () => {
         <h1>{data.character.name}</h1>
         <p>{data.character.gender}</p>
         <div className="charcter-episode">
-          {data.character.episode.slice(0, 6).map((episode) => {
+          {data.character.episode.slice(0, 10).map((episode) => {
             return (
               <div>
                 {episode.name}-<b>{episode.episode}</b>

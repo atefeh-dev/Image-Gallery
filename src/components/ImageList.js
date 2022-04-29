@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import { Link } from "react-router-dom";
 import { useCharacters } from "../hooks/useCharacters";
 import "../style/ImageList.scss";
 
@@ -12,10 +13,10 @@ const ImageList = () => {
     <div className="imageList">
       {data.characters.results.map((character) => {
         return (
-          <div>
+          <Link to={`/${character.id}`}>
             <img src={character.image} />
             <h2>{character.name}</h2>
-          </div>
+          </Link>
         );
       })}
     </div>
