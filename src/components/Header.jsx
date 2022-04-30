@@ -30,6 +30,9 @@ const Header = () => {
       },
     }
   );
+  useEffect(() => {
+    if (data) navigate("/search", { state: { loading, error, data, called } });
+  });
 
   console.log(error, loading, data, called);
 
@@ -47,8 +50,7 @@ const Header = () => {
   });
   const GoToLocation = () => {
     getLocations();
-    console.log({ loading, error, data, called });
-    if (data) navigate("/search", { state: { loading, error, data, called } });
+    //    if (data) navigate("/search", { state: { loading, error, data, called } });
   };
   return (
     <header>
