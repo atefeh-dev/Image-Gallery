@@ -21,7 +21,6 @@ const Header = () => {
   const [name, setName] = useState();
   const [floatv, setFloatv] = useState();
   const navigate = useNavigate();
-
   const [getLocations, { loading, error, data, called }] = useLazyQuery(
     GET_CHARACTER_LOCATION,
     {

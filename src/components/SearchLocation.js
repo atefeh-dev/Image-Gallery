@@ -1,11 +1,13 @@
 /** @format */
 import React from "react";
 import { useLocation } from "react-router-dom";
+import NotFoundPage from "./NotFoundPage";
 
 const SearchLocation = () => {
   const location = useLocation();
+  if (location.state == null) return <NotFoundPage />;
 
-  console.log(location.state.data.characters);
+  if (!location.state.data.characters) return <NotFoundPage />;
   return (
     <div>
       <ul>
