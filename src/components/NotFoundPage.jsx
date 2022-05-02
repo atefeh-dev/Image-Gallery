@@ -3,7 +3,7 @@
 import "../style/NotFoundPage.scss";
 const NotFound = () => {
   return (
-    <div className="s-page">
+    <div className="canvas">
       <h3 className="titlen">OH JEEZ, IT'S A</h3>
       <h2 className="four1">4</h2>
       <h2 className="four">4</h2>
