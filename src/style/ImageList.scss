@@ -1,6 +1,5 @@
 /** @format */
-
-.imageList {
+.masonry {
   width: 100%;
   height: auto;
   padding: 0 1rem 1rem 1rem;
@@ -9,5 +8,15 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   .masonry-brick {
+    .image-card {
+      --card-options-height: 60px;
+
+      position: relative;
+      display: flex;
+      background: var(--white);
+      box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.016),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.024), 0 100px 80px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+    }
   }
 }
