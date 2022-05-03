@@ -13,19 +13,32 @@ const Image = () => {
   if (loading) return <div>spinner...</div>;
 
   return (
-    <div className="character">
-      <img src={data.character.image} width={750} height={750} />
-      <div className="character-content">
-        <h1>{data.character.name}</h1>
-        <p>{data.character.gender}</p>
-        <div className="charcter-episode">
-          {data.character.episode.slice(0, 10).map((episode) => {
-            return (
-              <div>
-                {episode.name}-<b>{episode.episode}</b>
-              </div>
-            );
-          })}
+    <div className="img-container">
+      <div className="card-container">
+        <div className="card-img">
+          <div className="front">
+            <h2 className="sub-title-card">{data.character.name}</h2>
+            <h1 className="title-card">{data.character.gender}</h1>
+            <img className="image-frame" src={data.character.image} />
+          </div>
+          <div class="back">
+            <h3 class="synopsis">Synopsis</h3>
+            <p>
+              Rick and Morty is an American adult animated television series
+              created by Justin Roiland and Dan Harmon for Adult Swim. The
+              series follows the misadventures of alcoholic scientist Rick and
+              his easily influenced grandson Morty, who split their time between
+              domestic family life and interdimensional travel.
+              <hr />
+              {data.character.episode.slice(0, 10).map((episode) => {
+                return (
+                  <div className="episod-name">
+                    {episode.name}-<b>{episode.episode}</b>
+                  </div>
+                );
+              })}
+            </p>
+          </div>
         </div>
       </div>
     </div>

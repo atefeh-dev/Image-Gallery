@@ -13,7 +13,7 @@ const ImageCardList = (data) => {
           <div className="image-card--clickable-area" onClick={() => {}} />
           <div className="image-card--options">
             <div className="user-info">
-              <h3>{data.data.name}</h3>
+              <h3 className="ch-name">{data.data.name}</h3>
             </div>
             <div className="links">
               <a className="link" target="_blank_" tabIndex="-1">
