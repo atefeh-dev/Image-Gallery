@@ -3,6 +3,8 @@
 import React from "react";
 import { useParams } from "react-router";
 import { useCharacter } from "../hooks/useCharacter";
+import { Grid } from "react-loader-spinner";
+
 import "../style/image.scss";
 const Image = () => {
   console.log(useParams());
@@ -10,7 +12,17 @@ const Image = () => {
   const { error, loading, data } = useCharacter(id);
 
   if (error) return <div>something is wrong</div>;
-  if (loading) return <div>spinner...</div>;
+  if (loading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}>
+        <Grid height="70" width="70" color="grey" ariaLabel="loading" />
+      </div>
+    );
 
   return (
     <div className="img-container">
