@@ -30,7 +30,7 @@ const Image = () => {
               his easily influenced grandson Morty, who split their time between
               domestic family life and interdimensional travel.
               <hr />
-              {data.character.episode.slice(0, 10).map((episode) => {
+              {data.character.episode.slice(0, 1).map((episode) => {
                 return (
                   <div className="episod-name">
                     {episode.name}-<b>{episode.episode}</b>
